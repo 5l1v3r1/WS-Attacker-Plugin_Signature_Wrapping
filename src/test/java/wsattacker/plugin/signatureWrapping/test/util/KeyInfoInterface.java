@@ -20,7 +20,7 @@ package wsattacker.plugin.signatureWrapping.test.util;
 
 /**
  * This Interace is used to get the needed Key Information for Signature creation/verification!
- * 
+ *
  */
 public interface KeyInfoInterface
 {

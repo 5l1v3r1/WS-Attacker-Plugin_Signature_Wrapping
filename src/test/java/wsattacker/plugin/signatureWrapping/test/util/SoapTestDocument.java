@@ -42,7 +42,7 @@ import wsattacker.plugin.signatureWrapping.util.dom.DomUtilities;
 
 /**
  * A simple SoapMessage Test document
- * 
+ *
  */
 public class SoapTestDocument
 {
@@ -137,17 +137,17 @@ public class SoapTestDocument
   {
     return getOrCreateChild(getSucurity(), "Timestamp", PREFIX_NS_WSU, URI_NS_WSU);
   }
-  
+
   public void setTimestamp() {
     setTimestamp(false, true); // TTL=15min
   }
-  
+
   public void setTimestamp(boolean expired, boolean inMilliseconds)
   {
     final String id = "timestampID";
     String ms = (inMilliseconds?".100":"");
     Element oldTimestamp = getTimestamp();
-    
+
 
     Timestamp newTimestamp = null;
     if(expired) {

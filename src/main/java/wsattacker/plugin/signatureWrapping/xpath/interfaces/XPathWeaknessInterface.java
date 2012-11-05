@@ -29,14 +29,14 @@ import wsattacker.plugin.signatureWrapping.util.exception.InvalidWeaknessExcepti
  *  - DescendantWeakness
  *  - Namespace Injection
  */
-public interface XPathWeakness
+public interface XPathWeaknessInterface
 {
-  public int getNumberOfPossibilites();
+  public int getNumberOfPossibilities();
 
   /**
    * abuse an XPath weakness. Important: The implementation is not allowed to change the references for signedElement or
    * payloadElement. This is needed for the decorator pattern!
-   * 
+   *
    * @param index
    * @param signedElement
    * @param payloadElement

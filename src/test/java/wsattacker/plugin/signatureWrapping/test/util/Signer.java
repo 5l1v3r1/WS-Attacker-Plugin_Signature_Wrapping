@@ -65,7 +65,7 @@ import static wsattacker.plugin.signatureWrapping.util.signature.NamespaceConsta
 
 /**
  * Main Signature Class Is able to sign and verify a Document by XPath and ID
- * 
+ *
  */
 public class Signer
 {
@@ -77,9 +77,9 @@ public class Signer
   final static String         idString  = "";                            // whole document
 
   final static int            TIMESTAMP = 60 * 15;                       // 15min
-  
+
 //  public static String c14n_method = CanonicalizationMethod.INCLUSIVE_WITH_COMMENTS;
-  public static String c14n_method = CanonicalizationMethod.EXCLUSIVE; 
+  public static String c14n_method = CanonicalizationMethod.EXCLUSIVE;
 
   public String printBytes(byte[] bytes)
   {
@@ -153,7 +153,7 @@ public class Signer
       else
       {
         // check if xpaths match any elements
-        List<Element> match = evaluateXPath(doc, r);
+        List<Element> match = (List<Element>) evaluateXPath(doc, r);
         if (match.size() < 1)
         {
           throw new Exception("Invalid document, can't find node by XPATH:\n\n" + r + "\n\n" + domToString(doc));
@@ -281,10 +281,10 @@ public class Signer
       LOG.warn("There are " + timestampList.size() + " Timestamp Elemenets");
       return false;
     }
-    
+
     return verifyTimestamp(timestampList.get(0));
   }
-  
+
   public boolean verifyTimestamp(Element timestampElement)
       throws Exception
 {

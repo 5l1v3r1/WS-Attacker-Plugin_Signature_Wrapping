@@ -16,23 +16,37 @@
  * along with this program; if not, write to the Free Software
  * Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
  */
-package wsattacker.plugin.signatureWrapping.xpath.interfaces;
-
-import java.util.List;
-
-import org.w3c.dom.Element;
-
-import wsattacker.plugin.signatureWrapping.schema.SchemaAnalyzerInterface;
-import wsattacker.plugin.signatureWrapping.xpath.parts.AbsoluteLocationPath;
+/*
+ * To change this template, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package wsattacker.plugin.signatureWrapping.function.postanalyze.model;
 
 /**
- * Interface for creating a List of XPathWeaknesses.
- * Factory Pattern.
+ *
+ * @author christian
  */
-public interface XPathWeaknessFactoryInterface
-{
-  public List<XPathWeaknessInterface> generate(AbsoluteLocationPath xpath,
-                                      Element signedElement,
-                                      Element payloadElement,
-                                      SchemaAnalyzerInterface schemaAnalyser);
+public class AnalysisData {
+	private int index;
+	private String response;
+
+	public AnalysisData(int index, String response) {
+		this.index = index;
+		this.response = response;
+	}
+
+	/**
+	 * @return the index
+	 */
+	public int getIndex() {
+		return index;
+	}
+
+	/**
+	 * @return the response
+	 */
+	public String getResponse() {
+		return response;
+	}
+
 }
